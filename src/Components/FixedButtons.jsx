@@ -53,8 +53,7 @@ const FixedButtons = () => {
               animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
               transition={{ duration: 0.1 }}
               whileTap={{ scale: 0.9 }}
-              className={`${dark ? 'bg-zinc-950/85' : 'bg-[#5031ffca]'} ${dark ? 'hover:bg-zinc-950' : 'hover:bg-[#5031ff]'} sm:px-6 sm:py-3 px-5 py-2 text-white font-semibold rounded-full border-4 border-zinc-50 cursor-pointer transition-transform`}
-            >
+              className={`${dark ? 'bg-zinc-950/85' : 'bg-[#5031ffca]'} ${dark ? 'hover:bg-zinc-950' : 'hover:bg-[#5031ff]'} sm:px-6 sm:py-3 px-5 py-2 text-white font-semibold rounded-full border-4 border-zinc-50 cursor-pointer transition-transform`}>
               Hire Me
             </motion.button>
 
@@ -63,8 +62,7 @@ const FixedButtons = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               onClick={changeDark}
-              className='text-3xl sm:text-4xl cursor-pointer'
-            >
+              className='text-3xl sm:text-4xl cursor-pointer'>
               {dark ? <MdNightsStay className='text-zinc-600' /> : <IoSunny className='text-[#E4EA8C]' />}
             </motion.span>
 
@@ -73,37 +71,36 @@ const FixedButtons = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
               onClick={showMenu}
-              className={`cursor-pointer ${dark ? 'text-gray-600' : 'text-gray-950'} text-4xl sm:text-5xl`}
-            >
+              className={`cursor-pointer ${dark ? 'text-gray-600' : 'text-gray-950'} text-4xl sm:text-5xl`}>
               <CgMenuGridO className='hover:scale-90' />
             </motion.span>
           </div>
 
-          <div className='flex justify-end items-center pr-5 sm:pr-10 md:pr-15 lg:pr-20'>
+          <div className='flex justify-end w-full items-center pr-5 sm:pr-10 md:pr-15 lg:pr-20'>
             {menu && (
-              <div className={`uppercase text-zinc-950/50 bg-zinc-50/10 backdrop-blur-md shadow-lg border border-white/20 text-end rounded-lg flex items-end flex-col text-xl md:text-2xl lg:text-3xl gap-3 sm:gap-5 md:gap-7 lg:gap-9 p-4 font-bold`}>
-                <a href="#">
-                  <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
+              <div className={`uppercase  text-zinc-950/50 bg-zinc-50/10 backdrop-blur-md shadow-lg text-end rounded-lg flex items-end flex-col text-xl md:text-2xl lg:text-3xl gap-3 sm:gap-5 md:gap-7 lg:gap-9 p-4 font-bold`}>
+                <a href="#" className='w-full'>
+                  <h1 className='hover:bg-zinc-50/60 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     Home
                   </h1>
                 </a>
-                <a href="#about">
-                  <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
+                <a href="#about" className='w-full'>
+                  <h1 className='hover:bg-zinc-50/60 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     About
                   </h1>
                 </a>
-                <a href="#projects">
-                  <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
+                <a href="#projects" className='w-full'>
+                  <h1 className='hover:bg-zinc-50/60 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     Projects
                   </h1>
                 </a>
-                <a href="#contact">
-                  <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
+                <a href="#contact" className='w-full'>
+                  <h1 className='hover:bg-zinc-50/60 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     Contact
                   </h1>
                 </a>
                 <a className='w-full' href="https://drive.google.com/file/d/1QnSEZ_8SjdLV-pw_rmtGIsEcIPO_osRa/view?usp=sharing" target='_blank' rel="noopener noreferrer">
-                  <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
+                  <h1 className='hover:bg-zinc-50/60 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     Resume
                   </h1>
                 </a>
