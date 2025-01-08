@@ -11,7 +11,7 @@ const Page1 = () => {
   const { dark} = useContext(ThemeContext);
   return (
     <>
-    <div id='Home' className='reletive h-screen hidden md:block w-full p-2 lg:p-6 sm:p-3   pr-4 lg:pr-11 sm:pr-4  '>
+    <div id='home' className='reletive h-screen hidden md:block w-full p-2 lg:p-6 sm:p-3   pr-4 lg:pr-11 sm:pr-4  '>
       <div style={ dark? {backgroundImage: `url(${bgImage1})` } : {backgroundImage: `url(https://i.postimg.cc/1RjvDNSy/Image-Color1.png)` }} className='h-full w-full rounded-[30px] sm:rounded-[50px] bg-gray-500 bg-center bg-cover '>
       <FixedButtons/>
       <Page1_Text/>

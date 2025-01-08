@@ -82,7 +82,7 @@ const FixedButtons = () => {
           <div className='flex justify-end items-center pr-5 sm:pr-10 md:pr-15 lg:pr-20'>
             {menu && (
               <div className={`uppercase text-zinc-950/50 bg-zinc-50/10 backdrop-blur-md shadow-lg border border-white/20 text-end rounded-lg flex items-end flex-col text-xl md:text-2xl lg:text-3xl gap-3 sm:gap-5 md:gap-7 lg:gap-9 p-4 font-bold`}>
-                <a href="#Home">
+                <a href="#">
                   <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     Home
                   </h1>
@@ -116,7 +116,7 @@ const FixedButtons = () => {
       <div className='bottom-0 right-0 fixed z-10'>
         <div className={`${dark ? 'bg-zinc-50/50 border-2 border-zinc-950' : 'bg-zinc-50/50 border-2 border-red-500'} hover:scale-75 transition duration-500 ease-in-out transform rounded-full w-[10vh] h-[10vh] flex justify-center text-center items-center`} onClick={handleClick}>
           <span className='text-xl sm:text-3xl md:text-5xl lg:text-6xl cursor-pointer'>
-            {showTopArrow ? <MdOutlineArrowUpward /> : <MdArrowDownward/>}
+            {showTopArrow ? <MdOutlineArrowUpward className={`${dark ? 'text-zinc-950':'text-blue-600'}`}/> : <MdArrowDownward className={`${dark ?'text-zinc-950':'text-blue-600'}`}/>}
           </span>
         </div>
       </div>

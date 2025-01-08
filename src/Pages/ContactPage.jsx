@@ -54,8 +54,7 @@ const ContactPage = () => {
                   type="text"
                   placeholder="Type"
                   className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed`}
-                  required
-                />
+                  required/>
               </div>
               <div className="flex flex-col w-[45vh] md:w-[17vh] lg:w-[50vh]">
                 <label htmlFor="lastname" className="text-lg md:text-xl">Last Name</label>
@@ -66,8 +65,7 @@ const ContactPage = () => {
                   name="last_name"
                   type="text"
                   placeholder="Type"
-                  className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed`}
-                />
+                  className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed`}/>
               </div>
               <div className="flex flex-col w-[45vh] md:w-[17vh] lg:w-[50vh]">
                 <label htmlFor="email" className="text-lg md:text-xl flex flex-row flex-nowrap gap-1 items-center">
@@ -81,8 +79,7 @@ const ContactPage = () => {
                   type="email"
                   placeholder="Type"
                   className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed`}
-                  required
-                />
+                  required/>
               </div>
               <div className="flex flex-col w-[45vh] md:w-[17vh] lg:w-[50vh]">
                 <label htmlFor="companyname" className="text-lg md:text-xl">Company Name</label>
@@ -93,8 +90,7 @@ const ContactPage = () => {
                   name="company_name"
                   type="text"
                   placeholder="Type"
-                  className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed`}
-                />
+                  className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed`}/>
               </div>
               <div className="flex flex-col w-[45vh] md:w-[17vh] lg:w-[50vh]">
                 <label htmlFor="message" className="text-lg md:text-xl flex flex-row flex-nowrap gap-1 items-center">
@@ -108,21 +104,19 @@ const ContactPage = () => {
                   placeholder="Type / NA"
                   className={`px-2 py-3 font-semibold text-base sm:text-lg lg:text-xl bg-transparent outline-none border-b-2 ${dark ? 'border-zinc-950' : 'border-[#CB0000]'} border-dashed resize-none overflow-hidden`}
                   required
-                  rows="2"
-                />
+                  rows="2"/>
               </div>
               <div className="flex flex-col justify-end w-[20vh]">
                 <button
                   type="submit"
-                  className={`px-4 py-2 font-semibold rounded-3xl ${isFormComplete() ? `${dark ? 'bg-zinc-950 text-zinc-50' : 'bg-[#ff0000] text-[#2600ff]'} cursor-pointer` : `${dark ? 'bg-zinc-950/70 text-zinc-50/80' : 'bg-[#cb000078] text-[#2600ffb0]'} cursor-not-allowed`}`}
-                >
+                  className={`px-4 py-2 font-semibold rounded-3xl ${isFormComplete() ? `${dark ? 'bg-zinc-950 text-zinc-50' : 'bg-[#ff0000] text-[#2600ff]'} cursor-pointer` : `${dark ? 'bg-zinc-950/70 text-zinc-50/80' : 'bg-[#cb000078] text-[#2600ffb0]'} cursor-not-allowed`}`}>
                   Submit
                 </button>
               </div>
             </form>
             <div className="font-sans w-full py-[7vh] text-lg font-semibold leading-normal">
               <h1>Reach out directly at</h1>
-              <h1 className={`underline underline-offset-8 ${dark ? 'text-zinc-950' : 'text-[#CB0000]'} cursor-pointer`}>dpy9572@gmail.com</h1>
+              <h1 className={`underline underline-offset-8 ${dark ? 'text-zinc-950' : 'text-[#CB0000]'} cursor-pointer`}> <a href="mailto: dpy9572@gmail.com">dpy9572@gmail.com</a> </h1>
             </div>
           </div>
         </div>

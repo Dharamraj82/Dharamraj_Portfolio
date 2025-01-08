@@ -6,7 +6,7 @@ const ConnectPage = () => {
   const { dark} = useContext(ThemeContext);
     return (
     <>
-    <div id='connect' className={`${dark?'bg-black text-white':'bg-white text-zinc-950'} w-full h-screen`}>
+    <div id='connect' className={`${dark?'bg-black text-white':'bg-white text-blue-600'} w-full h-screen`}>
        <div className='flex flex-col px-[6vw] py-[10vh] gap-[9vh] md:gap-[8vh]'>
             <div className='text-[44px] sm:text-5xl md:text-6xl lg:text-7xl font-light'>
                 <h1>Connect with us</h1>
