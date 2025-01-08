@@ -82,7 +82,7 @@ const FixedButtons = () => {
           <div className='flex justify-end items-center pr-5 sm:pr-10 md:pr-15 lg:pr-20'>
             {menu && (
               <div className={`uppercase text-zinc-950/50 bg-zinc-50/10 backdrop-blur-md shadow-lg border border-white/20 text-end rounded-lg flex items-end flex-col text-xl md:text-2xl lg:text-3xl gap-3 sm:gap-5 md:gap-7 lg:gap-9 p-4 font-bold`}>
-                <a href="#Home">
+                <a href="#home">
                   <h1 className='hover:bg-zinc-50/40 hover:text-zinc-900 rounded-md px-5 py-2 w-full transition-all duration-500 ease-in-out cursor-pointer'>
                     Home
                   </h1>
