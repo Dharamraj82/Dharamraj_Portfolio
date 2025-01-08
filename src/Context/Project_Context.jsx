@@ -8,7 +8,7 @@ import BubbleGame from '../assets/BubbleGame.png';
 export const DataContext = createContext();
 export const ThemeContext = createContext();
 
-const CombinedContextProvider = ({ children }) => {
+const Project_Context = ({ children }) => {
   const data = [
     {
       "project_link": "https://dharamraj82.github.io/To-doList/",
@@ -64,4 +64,4 @@ const CombinedContextProvider = ({ children }) => {
   );
 };
 
-export default CombinedContextProvider;
+export default Project_Context;

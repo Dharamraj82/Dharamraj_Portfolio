@@ -3,6 +3,7 @@ import { CgMenuGridO } from "react-icons/cg";
 import { motion } from "framer-motion";
 import { MdNightsStay, MdOutlineArrowUpward } from "react-icons/md";
 import { MdArrowDownward } from "react-icons/md";
+import { IoSunny } from "react-icons/io5";
 import { ThemeContext } from '../Context/Project_Context';
 
 const FixedButtons = () => {
@@ -64,7 +65,7 @@ const FixedButtons = () => {
               onClick={changeDark}
               className='text-3xl sm:text-4xl cursor-pointer'
             >
-              {dark ? <MdNightsStay className='text-zinc-600' /> : <MdNightsStay className='text-zinc-600' />}
+              {dark ? <MdNightsStay className='text-zinc-600' /> : <IoSunny className='text-[#E4EA8C]' />}
             </motion.span>
 
             <motion.span
