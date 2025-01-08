@@ -41,7 +41,7 @@ const ContactPage = () => {
           <div className="flex flex-wrap font-font2">
             <form onSubmit={submitMessage} action="https://api.web3forms.com/submit" method="POST" className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
               <input type="hidden" name="access_key" value="27b3ab42-d879-4e58-af67-ccaa8662d933" />
-              <input type="hidden" name="redirect" value="http://localhost:5173" target="_blank"/>
+              <input type="hidden" name="redirect" value="https://dharamraj-portfolio.vercel.app/" target="_blank"/>
               <div className="flex flex-col w-[45vh] md:w-[17vh] lg:w-[50vh]">
                 <label htmlFor="firstname" className="text-lg md:text-xl flex flex-row flex-nowrap gap-1 items-center">
                   First Name <FaStarOfLife className="text-red-700 text-[7px]" />
