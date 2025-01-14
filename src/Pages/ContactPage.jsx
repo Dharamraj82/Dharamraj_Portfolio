@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { FaStarOfLife } from 'react-icons/fa6';
 import { ThemeContext } from '../Context/Project_Context';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import { motion } from 'framer-motion';
 
 const ContactPage = () => {
   const { dark } = useContext(ThemeContext);
@@ -10,26 +13,45 @@ const ContactPage = () => {
   const [email, setEmail] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [message, setMessage] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const isFormComplete = () => {
     return firstName && email && message;
   };
 
+
+
   const submitMessage = (e) => {
     e.preventDefault();
-    if (isFormComplete()) {
-      alert('Message Submitted Successfully');
-      setFirstName('');
-      setLastName('');
-      setEmail('');
-      setCompanyName('');
-      setMessage('');
-      e.target.submit();
-    } else {
-      alert('Please fill out all required fields.');
-    }
+  
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setCompanyName('');
+    setMessage('');
+  
+    setShowSuccess(true);
+  
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 4000);
+  
+    const form = e.target;
+    const formData = new FormData(form);
+  
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    }).then((response) => {
+      if (response.ok) {
+        const redirectUrl = formData.get('redirect');
+        window.open(redirectUrl, '_blank');
+      } else {
+        console.error('Form submission failed.');
+      }
+    });
   };
-
+  
   return (
     <>
       <div id ='contact' className={`w-full ${dark ? 'bg-zinc-400/40 text-zinc-900/90' : 'bg-[#f2ff412e] text-[#5031FF]'}`}>
@@ -38,6 +60,7 @@ const ContactPage = () => {
             <h1>Questions?</h1>
             <h2>Reach out.</h2>
           </div>
+         
           <div className="flex flex-wrap font-font2">
             <form onSubmit={submitMessage} action="https://api.web3forms.com/submit" method="POST" className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
               <input type="hidden" name="access_key" value="27b3ab42-d879-4e58-af67-ccaa8662d933" />
@@ -118,6 +141,22 @@ const ContactPage = () => {
               <h1>Reach out directly at</h1>
               <h1 className={`underline underline-offset-8 ${dark ? 'text-zinc-950' : 'text-[#CB0000]'} cursor-pointer`}> <a href="mailto: dpy9572@gmail.com">dpy9572@gmail.com</a> </h1>
             </div>
+            {showSuccess && (
+            <div className='felx justify-end items-end h-11 w-full'>
+            <motion.div
+            initial={{ x: '100%', opacity: 0 }} 
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className='absolute right-0'>
+            <Stack sx={{ width: '100%' }} spacing={2}>
+            <Alert variant="filled" severity="success">
+            This Message is Submitted Successfully.
+            </Alert>
+          </Stack>
+            </motion.div>
+           </div>
+            )}
           </div>
         </div>
       </div>
