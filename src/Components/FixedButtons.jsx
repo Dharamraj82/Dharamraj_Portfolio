@@ -111,7 +111,7 @@ const FixedButtons = () => {
       </div>
 
       <div className='bottom-0 right-0 fixed z-10'>
-        <div className={`${dark ? 'bg-zinc-50/50 border-2 border-zinc-950' : 'bg-zinc-50/50 border-2 border-red-500'} hover:scale-75 transition duration-500 ease-in-out transform rounded-full w-[10vh] h-[10vh] flex justify-center text-center items-center`} onClick={handleClick}>
+        <div className={`${dark ? 'bg-zinc-50/60 border-2 border-zinc-950' : 'bg-zinc-50/60 border-2 border-blue-600'} hover:scale-75 transition duration-500 ease-in-out transform rounded-full w-[10vh] h-[10vh] flex justify-center text-center items-center`} onClick={handleClick}>
           <span className='text-xl sm:text-3xl md:text-5xl lg:text-6xl cursor-pointer'>
             {showTopArrow ? <MdOutlineArrowUpward className={`${dark ? 'text-zinc-950':'text-blue-600'}`}/> : <MdArrowDownward className={`${dark ?'text-zinc-950':'text-blue-600'}`}/>}
           </span>
