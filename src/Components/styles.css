@@ -4,7 +4,9 @@
     position: relative;
     height: 100%;
   } */
-
+  #stroked-text {
+    -webkit-text-stroke: 1px rgb(243, 255, 20);
+}
 :root {
     --swiper-theme-color: rgb(255, 255, 255);
   }

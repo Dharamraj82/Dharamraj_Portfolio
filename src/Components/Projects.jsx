@@ -62,7 +62,7 @@ export default function Projects() {
             <span className={`desc text-xl sm:text-2xl lg:text-3xl absolute top-1 right-1 ${dark ? 'text-zinc-100':'text-red-600'} opacity-0 translate-y-[-10px] transition duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0`}>
               <PiShareFatFill/>
             </span>
-            <h1 className={`desc font-font3 font-light ${dark?'text-zinc-950/90 bg-zinc-50/10':'text-[#adbc07] bg-zinc-50/10'} text-sm sm:text-xl md:text-2xl lg:text-4xl absolute z-10 bottom-0 backdrop-blur-md shadow-lg p-0 md:p-1 lg:p-2 rounded-lg opacity-0 translate-y-[100px] transition duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0`}>{project.project_desc}</h1>
+            <h1 id='stroked-text' className={`desc font-semibold ${dark?'text-zinc-950/90 bg-zinc-50/10':'text-[#ff0000] bg-zinc-50/10'} text-sm sm:text-xl md:text-2xl lg:text-4xl absolute z-10 bottom-0 backdrop-blur-md shadow-lg p-0 md:p-1 lg:p-2 rounded-lg opacity-0 translate-y-[100px] transition duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0`}>{project.project_desc}</h1>
           </div> 
         </SwiperSlide>
          )
