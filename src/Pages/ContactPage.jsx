@@ -141,14 +141,15 @@ const ContactPage = () => {
               <h1>Reach out directly at</h1>
               <h1 className={`underline underline-offset-8 ${dark ? 'text-zinc-950' : 'text-[#CB0000]'} cursor-pointer`}> <a href="mailto: dpy9572@gmail.com">dpy9572@gmail.com</a> </h1>
             </div>
+          </div>
             {showSuccess && (
-            <div className='felx justify-end items-end h-11 w-full'>
+            <div className='felx justify-end items-end h-11'>
             <motion.div
             initial={{ x: '100%', opacity: 0 }} 
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '100%', opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className='absolute right-0'>
+            className='sm:top-28 md:top-36 top-20 right-0 fixed z-10'>
             <Stack sx={{ width: '100%' }} spacing={2}>
             <Alert variant="filled" severity="success">
             This Message is Submitted Successfully.
@@ -157,7 +158,6 @@ const ContactPage = () => {
             </motion.div>
            </div>
             )}
-          </div>
         </div>
       </div>
     </>
