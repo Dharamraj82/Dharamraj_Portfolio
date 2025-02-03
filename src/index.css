@@ -4,6 +4,7 @@
 
 body {
     overflow-x: hidden; 
+    /* background: #000; */
 }
 @font-face {
     font-family: 'Bebas';

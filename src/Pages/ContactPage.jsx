@@ -3,9 +3,12 @@ import { FaStarOfLife } from 'react-icons/fa6';
 import { ThemeContext } from '../Context/Project_Context';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import { motion } from 'framer-motion';
+import { motion, useTransform } from "framer-motion";
 
-const ContactPage = () => {
+const ContactPage = ({ scrollYProgress }) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);  
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
+  
   const { dark } = useContext(ThemeContext);
 
   const [firstName, setFirstName] = useState('');
@@ -54,7 +57,12 @@ const ContactPage = () => {
   
   return (
     <>
-      <div id ='contact' className={`w-full ${dark ? 'bg-zinc-400/40 text-zinc-900/90' : 'bg-[#f2ff412e] text-[#5031FF]'}`}>
+      <motion.div
+      style={{
+        scale,
+        rotate
+      }}
+      id ='contact' className={`w-full rounded-3xl ${dark ? 'bg-zinc-400/40 text-zinc-900/90' : 'bg-[#f2ff412e] text-[#5031FF]'}`}>
         <div className="flex flex-wrap px-[3vw] py-[10vw] justify-between gap-10">
           <div className="flex flex-col text-[44px] leading-tight">
             <h1>Questions?</h1>
@@ -132,7 +140,7 @@ const ContactPage = () => {
               <div className="flex flex-col justify-end w-[20vh]">
                 <button
                   type="submit"
-                  className={`px-4 py-2 font-semibold rounded-3xl ${isFormComplete() ? `${dark ? 'bg-zinc-950 text-zinc-50' : 'bg-[#ff0000] text-[#2600ff]'} cursor-pointer` : `${dark ? 'bg-zinc-950/70 text-zinc-50/80' : 'bg-[#cb000078] text-[#2600ffb0]'} cursor-not-allowed`}`}>
+                  className={`px-4 py-2 font-semibold rounded-3xl ${isFormComplete() ? `${dark ? 'bg-zinc-950 text-zinc-50' : 'bg-[#ff0000] text-[#2600ff]'} cursor-pointer` : `${dark ? 'bg-zinc-950/70 text-zinc-50/80' : 'bg-[#cb000078] text-[#2600ffb0]'} `}`}>
                   Submit
                 </button>
               </div>
@@ -159,7 +167,7 @@ const ContactPage = () => {
            </div>
             )}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

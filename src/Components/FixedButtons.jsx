@@ -1,15 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { CgMenuGridO } from "react-icons/cg";
-import { motion } from "framer-motion";
 import { MdNightsStay, MdOutlineArrowUpward } from "react-icons/md";
 import { MdArrowDownward } from "react-icons/md";
 import { IoSunny } from "react-icons/io5";
 import { ThemeContext } from '../Context/Project_Context';
+import { motion, useScroll} from 'framer-motion'
 
 const FixedButtons = () => {
   const [menu, setMenu] = useState(false);
   const { dark, changeDark } = useContext(ThemeContext);
   const [showTopArrow, setShowTopArrow] = useState(false);
+  const scrollYProgress = useScroll().scrollYProgress;
 
   const showMenu = () => {
     setMenu(!menu);
@@ -45,21 +46,34 @@ const FixedButtons = () => {
 
   return (
     <>
+    <motion.div
+            style={{ scaleX: scrollYProgress }}
+            className={`w-full z-10 h-[6px] origin-left fixed rounded-full ${
+              dark ? "bg-zinc-400" : "bg-blue-600"
+            }`}
+          ></motion.div>
+    
       <div className='top-0 right-0 w-[320px] fixed z-10'>
         <div className='relative flex flex-col gap-2'>
           <div className='flex justify-end items-center lg:pr-24 lg:pt-10 pr-6 pt-5 sm:pr-16 sm:pt-7 gap-3'>
-            <motion.button
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
-              transition={{ duration: 0.1 }}
-              whileTap={{ scale: 0.9 }}
+            <motion.div
+              initial={{ 
+                opacity: 0, y:-20, scale:0 
+              }}
+              animate={{ 
+                opacity: 1, y:0, scale: 1, 
+              }}
+              transition={{ 
+                duration: 1 
+              }}
+              whileHover={{ scale: 0.9 }}
               className={`${dark ? 'bg-zinc-950/85' : 'bg-[#5031ffca]'} ${dark ? 'hover:bg-zinc-950' : 'hover:bg-[#5031ff]'} sm:px-6 sm:py-3 px-5 py-2 text-white font-semibold rounded-full border-4 border-zinc-50 cursor-pointer transition-transform`}>
               Hire Me
-            </motion.button>
+            </motion.div>
 
             <motion.span
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0, y:-20, }}
+              animate={{ opacity: 1, scale: 1, y:0}}
               transition={{ duration: 0.5, delay: 0.4 }}
               onClick={changeDark}
               className='text-3xl sm:text-4xl cursor-pointer'>
@@ -67,8 +81,8 @@ const FixedButtons = () => {
             </motion.span>
 
             <motion.span
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0, y:-20, }}
+              animate={{ opacity: 1, scale: 1, y:0,}}
               transition={{ duration: 0.5, delay: 0.7 }}
               onClick={showMenu}
               className={`cursor-pointer ${dark ? 'text-gray-600' : 'text-gray-950'} text-4xl sm:text-5xl`}>
@@ -110,13 +124,17 @@ const FixedButtons = () => {
         </div>
       </div>
 
-      <div className='bottom-0 right-0 fixed z-10'>
-        <div className={`${dark ? 'bg-zinc-50/60 border-2 border-zinc-950' : 'bg-zinc-50/60 border-2 border-blue-600'} hover:scale-75 transition duration-500 ease-in-out transform rounded-full w-[10vh] h-[10vh] flex justify-center text-center items-center`} onClick={handleClick}>
+      <motion.div 
+         initial={{ opacity: 0, scale: 0, }}
+         animate={{ opacity: 1, scale: 1,}}
+         transition={{ duration: 0.5, delay: 1 }}
+      className='bottom-0 right-0 fixed z-10'>
+        <div className={` ${dark ? 'bg-zinc-50/60 border-2 border-zinc-950' : 'bg-zinc-50/60 border-2 border-blue-600'} hover:scale-75 transition duration-500 ease-in-out transform rounded-full w-[10vh] h-[10vh] flex justify-center text-center items-center`} onClick={handleClick}>
           <span className='text-xl sm:text-3xl md:text-5xl lg:text-6xl cursor-pointer'>
             {showTopArrow ? <MdOutlineArrowUpward className={`${dark ? 'text-zinc-950':'text-blue-600'}`}/> : <MdArrowDownward className={`${dark ?'text-zinc-950':'text-blue-600'}`}/>}
           </span>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
